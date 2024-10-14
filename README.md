@@ -12,7 +12,7 @@ Trzeci ekran powinien pozwalać na edycję istniejącego już stażysty lub jego
 Wszystkie ekrany powinny się poprawnie wyświetlać na tabletach oraz telefonach.
 Layout i style zgodne z tym co jest widoczne na obrazkach 1 oraz 2
 Całość powinna być stworzona jako Single Page Application (zalecany framework to Vue).
-Link oraz dokumentacja do api: [https://reqres.in/]
+Link oraz dokumentacja do api: [https://reqres.in/](https://reqres.in/)
 
 ## Project Setup
 
