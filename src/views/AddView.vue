@@ -15,6 +15,7 @@ const onSubmit = () => {
   addUser(formData.value)
     .catch(alert)
     .then(res => {
+      alert('User added successfully, redirecting to the edit page...')
       router.push('/edit/' + res.id)
     })
 }

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import UserInput from './UserInput.vue'
-import { defineProps, ref } from 'vue'
+import { ref } from 'vue'
 
 const props = defineProps({
   form: {
@@ -40,7 +40,10 @@ const submitForm = () => {
       <input type="submit" class="submit" value="Update details" />
     </div>
     <div class="container photo">
-      <img class="image" v-bind:src="avatar" />
+      <img
+        class="image"
+        v-bind:src="avatar || 'https://reqres.in/img/faces/1-image.jpg'"
+      />
       <div class="change-photo-wrapper">
         <button class="change-photo">
           <svg

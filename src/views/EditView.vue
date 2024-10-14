@@ -2,7 +2,7 @@
 import { onMounted } from 'vue'
 import UserDetails from '../components/UserDetails.vue'
 import type { User } from '../types'
-import { defineProps, reactive } from 'vue'
+import { reactive } from 'vue'
 import { getUser, updateUser } from '@/api'
 
 const { id } = defineProps({
