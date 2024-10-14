@@ -25,6 +25,7 @@ const onAvatarChange = (event: Event) => {
 }
 
 const submitForm = () => {
+  // eslint-disable-next-line
   props.form.avatar = avatar.value
   emit('submit')
 }
@@ -34,7 +35,9 @@ const submitForm = () => {
   <form class="wrapper" @submit.prevent="submitForm">
     <div class="container data">
       <div class="inputs">
+        <!-- eslint-disable-next-line -->
         <UserInput v-model="props.form.first_name" label="First Name" />
+        <!-- eslint-disable-next-line -->
         <UserInput v-model="props.form.last_name" label="Last Name" />
       </div>
       <input type="submit" class="submit" value="Update details" />

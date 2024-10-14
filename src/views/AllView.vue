@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import Search from '../components/Search.vue'
+import Search from '../components/SearchInput.vue'
 import AddUserBtn from '../components/AddUserBtn.vue'
 import UserTable from '../components/UserTable.vue'
-import Pagination from '../components/Pagination.vue'
+import Pagination from '../components/PaginationComponent.vue'
 import { onMounted, reactive, ref } from 'vue'
 import type { ListUsersResponse } from '../types'
 import { getUsers, getUsersByPage } from '@/api'

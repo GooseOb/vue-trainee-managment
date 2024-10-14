@@ -1,0 +1,4 @@
+bun run build
+bun run format
+bun run lint
+git add .
