@@ -18,6 +18,7 @@
   font-size: 1rem;
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 .icon {
   width: 1.5rem;
