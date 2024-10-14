@@ -5,12 +5,7 @@ import type { User } from '../types'
 import { reactive } from 'vue'
 import { getUser, updateUser } from '@/api'
 
-const { id } = defineProps({
-  id: {
-    type: Number,
-    required: true,
-  },
-})
+const { id } = defineProps<{ id: number }>()
 
 const onSubmit = (data: User) => {
   updateUser(id, data).then(res => {

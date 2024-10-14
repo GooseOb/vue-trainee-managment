@@ -1,12 +1,8 @@
 <script setup lang="ts">
 import * as api from '@/api'
+import type { User } from '@/types'
 
-const { users } = defineProps({
-  users: {
-    type: Object,
-    required: true,
-  },
-})
+const { users } = defineProps<{ users: User[] }>()
 
 const deleteUser = (id: number) => {
   api.deleteUser(id).then(res => {

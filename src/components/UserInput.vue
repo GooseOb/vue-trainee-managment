@@ -1,12 +1,7 @@
 <script setup lang="ts">
 const model = defineModel()
 
-const props = defineProps({
-  label: {
-    type: String,
-    required: true,
-  },
-})
+const props = defineProps<{ label: string }>()
 </script>
 
 <template>

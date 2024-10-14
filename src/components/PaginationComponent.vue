@@ -1,14 +1,8 @@
 <script setup lang="ts">
-const { pages, currentPage } = defineProps({
-  pages: {
-    type: Number,
-    required: true,
-  },
-  currentPage: {
-    type: Number,
-    required: true,
-  },
-})
+const { pages, currentPage } = defineProps<{
+  pages: number
+  currentPage: number
+}>()
 
 const emit = defineEmits(['update:currentPage'])
 
