@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import * as api from '@/api'
+
 const { users } = defineProps({
   users: {
     type: Object,
@@ -7,7 +9,9 @@ const { users } = defineProps({
 })
 
 const deleteUser = (id: number) => {
-  console.log(`Delete user with id: ${id}`)
+  api.deleteUser(id).then(res => {
+    alert(res.ok ? 'User deleted successfully' : 'Failed to delete user')
+  })
 }
 </script>
 
