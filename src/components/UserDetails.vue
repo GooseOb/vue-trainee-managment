@@ -1,16 +1,14 @@
 <script setup lang="ts">
+import type { UserData } from '@/types'
 import UserInput from './UserInput.vue'
 import { ref } from 'vue'
 
-const props = defineProps({
-  form: {
-    type: Object,
-    required: true,
-  },
-})
+const props = defineProps<{ form?: UserData }>()
+
+const form = { ...props.form }
 
 const emit = defineEmits(['submit'])
-const avatar = ref(props.form.avatar)
+const avatar = ref(form.avatar)
 
 const onAvatarChange = (event: Event) => {
   const target = event.target as HTMLInputElement
@@ -25,9 +23,8 @@ const onAvatarChange = (event: Event) => {
 }
 
 const submitForm = () => {
-  // eslint-disable-next-line
-  props.form.avatar = avatar.value
-  emit('submit')
+  form.avatar = avatar.value
+  emit('submit', form)
 }
 </script>
 
@@ -35,10 +32,8 @@ const submitForm = () => {
   <form class="wrapper" @submit.prevent="submitForm">
     <div class="container data">
       <div class="inputs">
-        <!-- eslint-disable-next-line -->
-        <UserInput v-model="props.form.first_name" label="First Name" />
-        <!-- eslint-disable-next-line -->
-        <UserInput v-model="props.form.last_name" label="Last Name" />
+        <UserInput v-model="form.first_name" label="First Name" />
+        <UserInput v-model="form.last_name" label="Last Name" />
       </div>
       <input type="submit" class="submit" value="Update details" />
     </div>

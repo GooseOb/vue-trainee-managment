@@ -2,17 +2,10 @@
 import router from '@/router'
 import UserDetails from '../components/UserDetails.vue'
 import type { UserData } from '../types'
-import { ref } from 'vue'
 import { addUser } from '@/api'
 
-const formData = ref<UserData>({
-  first_name: '',
-  last_name: '',
-  avatar: '',
-})
-
-const onSubmit = () => {
-  addUser(formData.value)
+const onSubmit = (data: UserData) => {
+  addUser(data)
     .catch(alert)
     .then(res => {
       alert('User added successfully, redirecting to the edit page...')
@@ -23,5 +16,5 @@ const onSubmit = () => {
 
 <template>
   <h2 class="title">Add user</h2>
-  <UserDetails @submit="onSubmit" :form="formData" />
+  <UserDetails @submit="onSubmit" />
 </template>

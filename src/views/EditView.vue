@@ -12,8 +12,8 @@ const { id } = defineProps({
   },
 })
 
-const onSubmit = () => {
-  updateUser(id, data.value).then(res => {
+const onSubmit = (data: User) => {
+  updateUser(id, data).then(res => {
     alert(res.ok ? 'User updated successfully' : 'Failed to update user')
   })
 }
