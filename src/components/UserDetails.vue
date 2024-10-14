@@ -76,6 +76,7 @@ const submitForm = () => {
 <style scoped>
 .wrapper {
   display: flex;
+  flex-wrap: wrap-reverse;
   justify-content: space-between;
   gap: 2rem;
 }
@@ -83,6 +84,12 @@ const submitForm = () => {
 .inputs {
   display: flex;
   flex-direction: row;
+}
+
+@media screen and (max-width: 768px) {
+  .inputs {
+    flex-direction: column;
+  }
 }
 
 .user-input {

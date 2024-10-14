@@ -16,6 +16,12 @@ import { RouterView } from 'vue-router'
   padding: 32px 300px;
 }
 
+@media (max-width: 1600px) {
+  .main {
+    padding: 32px 100px;
+  }
+}
+
 @media (max-width: 768px) {
   .main {
     padding: 32px 0;

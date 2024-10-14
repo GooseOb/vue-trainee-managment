@@ -43,6 +43,7 @@ const data = reactive({
     <div v-else>Loading...</div>
   </div>
   <Pagination
+    class="list-pagination"
     v-if="data.isLoaded"
     :pages="data.value.total_pages"
     :currentPage="currentPage"
@@ -56,5 +57,10 @@ const data = reactive({
   justify-content: space-between;
   margin-bottom: 32px;
   height: 42px;
+}
+@media screen and (max-width: 768px) {
+  .list-pagination {
+    justify-content: center;
+  }
 }
 </style>
