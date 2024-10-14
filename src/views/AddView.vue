@@ -3,6 +3,7 @@ import router from '@/router'
 import UserDetails from '../components/UserDetails.vue'
 import type { UserData } from '../types'
 import { ref } from 'vue'
+import { addUser } from '@/api'
 
 const formData = ref<UserData>({
   first_name: '',
@@ -11,17 +12,7 @@ const formData = ref<UserData>({
 })
 
 const onSubmit = () => {
-  fetch('https://reqres.in/api/users', {
-    method: 'POST',
-    body: JSON.stringify(formData.value),
-  })
-    .then(res => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        throw new Error('Failed to add user')
-      }
-    })
+  addUser(formData.value)
     .catch(alert)
     .then(res => {
       router.push('/edit/' + res.id)

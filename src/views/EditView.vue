@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import UserDetails from '../components/UserDetails.vue'
 import type { User } from '../types'
 import { defineProps, reactive } from 'vue'
+import { getUser, updateUser } from '@/api'
 
 const { id } = defineProps({
   id: {
@@ -11,26 +12,14 @@ const { id } = defineProps({
   },
 })
 
-const url = 'https://reqres.in/api/users/' + id
-
 const onSubmit = () => {
-  fetch(url, {
-    method: 'PUT',
-    body: JSON.stringify(data.value),
-  }).then(res => {
+  updateUser(id, data.value).then(res => {
     alert(res.ok ? 'User updated successfully' : 'Failed to update user')
   })
 }
 
 onMounted(() => {
-  fetch(url)
-    .then(res => {
-      if (res.ok) {
-        return res.json()
-      } else {
-        throw new Error('Failed to load user')
-      }
-    })
+  getUser(id)
     .then(res => {
       data.value = res.data
       data.isLoaded = true

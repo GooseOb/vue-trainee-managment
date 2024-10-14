@@ -5,24 +5,21 @@ import UserTable from '../components/UserTable.vue'
 import Pagination from '../components/Pagination.vue'
 import { onMounted, reactive, ref } from 'vue'
 import type { ListUsersResponse } from '../types'
+import { getUsers, getUsersByPage } from '@/api'
 
 const currentPage = ref(1)
 
 onMounted(() => {
-  fetch('https://reqres.in/api/users')
-    .then<ListUsersResponse>(res => res.json())
-    .then(res => {
-      data.isLoaded = true
-      data.value = res
-    })
+  getUsers().then(res => {
+    data.isLoaded = true
+    data.value = res
+  })
 })
 const onCurrentPageChange = (page: number) => {
   currentPage.value = page
-  fetch('https://reqres.in/api/users?page=' + currentPage.value)
-    .then<ListUsersResponse>(res => res.json())
-    .then(res => {
-      data.value = res
-    })
+  getUsersByPage(page).then(res => {
+    data.value = res
+  })
 }
 
 const data = reactive({
