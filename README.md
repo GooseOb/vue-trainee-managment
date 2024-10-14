@@ -1,18 +1,18 @@
 # vue-trainee-managment
 
-This template should help get you started developing with Vue 3 in Vite.
+## Task description (in Polish)
 
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
+Pewna firma poprosiła Cię o stworzenie aplikacji do zarządzania stażystami.
+Aplikacja ma pozwalać na zapisanie imienia, nazwiska, zdjęcia danego stażysty.
+Aplikacja powinna zawierać trzy ekrany.
+Pierwszy z możliwością dodania nowego stażysty. (patrz obrazki 1 i 2 )
+Pola: imię, nazwisko oraz avatar(jako link do zdjęcia).
+Drugi z listą wszystkich stażystów (paginowana lista z wyświetlaniem zdjęcia).
+Trzeci ekran powinien pozwalać na edycję istniejącego już stażysty lub jego usunięcie.
+Wszystkie ekrany powinny się poprawnie wyświetlać na tabletach oraz telefonach.
+Layout i style zgodne z tym co jest widoczne na obrazkach 1 oraz 2
+Całość powinna być stworzona jako Single Page Application (zalecany framework to Vue).
+Link oraz dokumentacja do api: [https://reqres.in/]
 
 ## Project Setup
 
