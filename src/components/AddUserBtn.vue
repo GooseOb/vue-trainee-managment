@@ -13,7 +13,7 @@
   color: white;
   padding: 8px 16px;
   border: none;
-  border-radius: 64px;
+  border-radius: 36px;
   cursor: pointer;
   font-size: 1rem;
   display: flex;

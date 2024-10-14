@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 const { pages, currentPage } = defineProps({
   pages: {
     type: Number,
@@ -12,7 +12,7 @@ const { pages, currentPage } = defineProps({
 
 const emit = defineEmits(['update:currentPage'])
 
-const goToPage = page => {
+const goToPage = (page: number) => {
   emit('update:currentPage', page)
 }
 

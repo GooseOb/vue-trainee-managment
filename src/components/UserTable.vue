@@ -6,10 +6,6 @@ const { users } = defineProps({
   },
 })
 
-const editUser = (id: number) => {
-  console.log(`Edit user with id: ${id}`)
-}
-
 const deleteUser = (id: number) => {
   console.log(`Delete user with id: ${id}`)
 }
