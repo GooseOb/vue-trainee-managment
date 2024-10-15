@@ -4,7 +4,7 @@ import AddUserBtn from '../components/AddUserBtn.vue'
 import UserTable from '../components/UserTable.vue'
 import Pagination from '../components/PaginationComponent.vue'
 import { onMounted, reactive, ref, computed } from 'vue'
-import type { ListUsersResponse } from '../types'
+import type { UserListResponse } from '../types'
 import { getUsers, getUsersByPage } from '@/api'
 
 const currentPage = ref(1)
@@ -25,7 +25,7 @@ const onCurrentPageChange = (page: number) => {
 
 const data = reactive({
   isLoaded: false,
-  value: {} as ListUsersResponse,
+  value: {} as UserListResponse,
 })
 
 const searchQuery = ref('')

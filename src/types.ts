@@ -10,7 +10,10 @@ export type User = {
   last_name: string
   avatar: string
 }
-export type ListUsersResponse = {
+export type UserResponse = {
+  data: User
+}
+export type UserListResponse = {
   page: number
   per_page: number
   total: number

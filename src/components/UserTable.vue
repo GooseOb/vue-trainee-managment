@@ -7,9 +7,12 @@ import DeleteIcon from '@/icons/DeleteIcon.vue'
 const { users } = defineProps<{ users: User[] }>()
 
 const deleteUser = (id: number) => {
-  api.deleteUser(id).then(res => {
-    alert(res.ok ? 'User deleted successfully' : 'Failed to delete user')
-  })
+  api
+    .deleteUser(id)
+    .catch(alert)
+    .then(() => {
+      alert('User deleted successfully')
+    })
 }
 </script>
 

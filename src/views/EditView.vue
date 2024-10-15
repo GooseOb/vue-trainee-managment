@@ -8,9 +8,11 @@ import { getUser, updateUser } from '@/api'
 const { id } = defineProps<{ id: number }>()
 
 const onSubmit = (data: User) => {
-  updateUser(id, data).then(res => {
-    alert(res.ok ? 'User updated successfully' : 'Failed to update user')
-  })
+  updateUser(id, data)
+    .catch(alert)
+    .then(() => {
+      alert('User updated successfully')
+    })
 }
 
 onMounted(() => {

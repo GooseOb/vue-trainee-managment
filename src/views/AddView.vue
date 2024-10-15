@@ -6,11 +6,11 @@ import { addUser } from '@/api'
 
 const onSubmit = (data: UserData) => {
   addUser(data)
-    .catch(alert)
     .then(res => {
       alert('User added successfully, redirecting to the edit page...')
       router.push('/edit/' + res.id)
     })
+    .catch(alert)
 }
 </script>
 
