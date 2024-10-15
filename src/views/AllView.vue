@@ -3,7 +3,7 @@ import Search from '../components/SearchInput.vue'
 import AddUserBtn from '../components/AddUserBtn.vue'
 import UserTable from '../components/UserTable.vue'
 import Pagination from '../components/PaginationComponent.vue'
-import { onMounted, reactive, ref } from 'vue'
+import { onMounted, reactive, ref, computed } from 'vue'
 import type { ListUsersResponse } from '../types'
 import { getUsers, getUsersByPage } from '@/api'
 
@@ -15,6 +15,7 @@ onMounted(() => {
     data.value = res
   })
 })
+
 const onCurrentPageChange = (page: number) => {
   currentPage.value = page
   getUsersByPage(page).then(res => {
@@ -26,18 +27,27 @@ const data = reactive({
   isLoaded: false,
   value: {} as ListUsersResponse,
 })
+
+const searchQuery = ref('')
+
+const filteredData = computed(() => {
+  const query = searchQuery.value.trim().toLowerCase()
+  return data.value.data.filter(({ first_name, last_name }) =>
+    (first_name + ' ' + last_name).toLowerCase().includes(query),
+  )
+})
 </script>
 
 <template>
   <h1 class="title">User list</h1>
   <div class="container">
     <div class="header">
-      <Search />
+      <Search v-model="searchQuery" />
       <AddUserBtn />
     </div>
     <UserTable
       v-if="data.isLoaded"
-      :users="data.value.data"
+      :users="filteredData"
       :currentPage="currentPage"
     />
     <div v-else>Loading...</div>

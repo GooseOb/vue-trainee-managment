@@ -1,12 +1,7 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 import SearchIcon from '@/icons/SearchIcon.vue'
 
-const searchQuery = ref('')
-
-const performSearch = () => {
-  console.log('Search query:', searchQuery.value)
-}
+const searchQuery = defineModel()
 </script>
 
 <template>
@@ -17,7 +12,7 @@ const performSearch = () => {
       placeholder="Search for users..."
       class="search-input"
     />
-    <button class="icon-button" @click="performSearch">
+    <button class="icon-button">
       <SearchIcon />
     </button>
   </div>
