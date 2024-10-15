@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import * as api from '@/api'
 import type { User } from '@/types'
+import EditIcon from '@/icons/EditIcon.vue'
+import DeleteIcon from '@/icons/DeleteIcon.vue'
 
 const { users } = defineProps<{ users: User[] }>()
 
@@ -29,38 +31,10 @@ const deleteUser = (id: number) => {
           <td>{{ user.first_name }} {{ user.last_name }}</td>
           <td>
             <RouterLink v-bind:to="'edit/' + user.id" class="action-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon"
-                viewBox="0 0 24 24"
-              >
-                <g
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                >
-                  <path
-                    d="M12 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"
-                  />
-                  <path
-                    d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z"
-                  />
-                </g>
-              </svg>
+              <EditIcon />
             </RouterLink>
             <button @click="deleteUser(user.id)" class="action-button">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="icon"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill="currentColor"
-                  d="M7 21q-.825 0-1.412-.587T5 19V6H4V4h5V3h6v1h5v2h-1v13q0 .825-.587 1.413T17 21zM17 6H7v13h10zM9 17h2V8H9zm4 0h2V8h-2zM7 6v13z"
-                />
-              </svg>
+              <DeleteIcon />
             </button>
           </td>
         </tr>
