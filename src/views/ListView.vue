@@ -74,4 +74,13 @@ const filteredData = computed(() => {
     justify-content: center;
   }
 }
+@media screen and (max-width: 430px) {
+  .header {
+    justify-content: center;
+  }
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
 </style>
