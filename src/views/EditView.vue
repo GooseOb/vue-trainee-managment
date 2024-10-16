@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, reactive } from 'vue'
 import UserDetails from '../components/UserDetails.vue'
 import type { User } from '../types'
-import { reactive } from 'vue'
 import { getUser, updateUser } from '@/api'
 
 const { id } = defineProps<{ id: number }>()
