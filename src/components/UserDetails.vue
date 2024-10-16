@@ -42,6 +42,7 @@ const submitForm = () => {
       <img
         class="image"
         v-bind:src="avatar || 'https://reqres.in/img/faces/1-image.jpg'"
+        alt="User avatar"
       />
       <div class="change-photo-wrapper">
         <button class="change-photo">
