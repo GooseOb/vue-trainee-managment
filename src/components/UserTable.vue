@@ -34,7 +34,7 @@ const deleteUser = (id: number) => {
           <td>{{ user.first_name }} {{ user.last_name }}</td>
           <td>
             <RouterLink v-bind:to="'edit/' + user.id" class="action-button">
-              <EditIcon />
+              <EditIcon class="icon" />
             </RouterLink>
             <button @click="deleteUser(user.id)" class="action-button">
               <DeleteIcon />
