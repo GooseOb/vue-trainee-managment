@@ -35,19 +35,15 @@ const searchQuery = defineModel()
 }
 
 .icon-button {
+  background-color: #f7f9f9;
+  color: #333;
+  font-size: 1.5rem;
   padding: 8px 12px;
-  color: white;
   border: none;
   border-radius: 0 4px 4px 0;
   cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.icon-button {
-  background-color: #f7f9f9;
-  color: #333;
-  font-size: 1.5rem;
 }
 </style>
