@@ -80,7 +80,6 @@ const nextPage = () => {
   color: #449671;
   background-color: white;
   padding: 10px;
-  border: none;
   cursor: pointer;
   border: 1px solid #ddd;
 }
