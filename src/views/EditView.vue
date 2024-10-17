@@ -8,10 +8,10 @@ const { id } = defineProps<{ id: number }>()
 
 const onSubmit = (data: User) => {
   updateUser(id, data)
-    .catch(alert)
     .then(() => {
       alert('User updated successfully')
     })
+    .catch(alert)
 }
 
 onMounted(() => {

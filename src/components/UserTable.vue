@@ -9,10 +9,10 @@ const { users } = defineProps<{ users: User[] }>()
 const deleteUser = (id: number) => {
   api
     .deleteUser(id)
-    .catch(alert)
     .then(() => {
       alert('User deleted successfully')
     })
+    .catch(alert)
 }
 </script>
 

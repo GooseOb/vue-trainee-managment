@@ -1,14 +1,14 @@
 import type { UserListResponse, UserData, UserResponse, User } from './types'
 
 const BASE = 'https://reqres.in/api/'
-const USERS = 'users/'
+const USERS = BASE + 'users/'
 
 const req = <TResponse = ''>(
   url: string,
   action: string,
   options?: RequestInit,
 ) =>
-  fetch(BASE + url, options).then<TResponse>(res => {
+  fetch(url, options).then<TResponse>(res => {
     if (res.ok) {
       return res.json()
     } else {
@@ -37,6 +37,10 @@ export const updateUser = (id: number, user: UserData) =>
   })
 
 export const deleteUser = (id: number) =>
-  req(USERS + id, 'delete user', {
+  fetch(USERS + id, {
     method: 'DELETE',
+  }).then(res => {
+    if (!res.ok) {
+      throw new Error('Failed to delete user')
+    }
   })
